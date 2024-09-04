@@ -47,7 +47,17 @@
   font-weight: bolder;
  }
 
+ @media (max-width: 600px) {
+    form > section {
+        width: 90%; /* 모바일에서 폼이 화면에 꽉 차도록 조정 */
+    }
 
+    #signedInBtn {
+        top: -60px; /* 모바일에서 위치 조정 */
+        left: -20px;
+        width: 40%; /* 모바일에서 버튼이 화면에 꽉 차도록 조정 */
+    }
+}
 
 </style>
 
@@ -158,9 +168,10 @@
       });
       document.addEventListener("DOMContentLoaded", () => {
       const eContol = document.getElementById("eContol");
-      const signedUpEmail = document.getElementById("signedUpEmail");
-      const signedUpPassword = document.getElementById("signedUpPassword");
-      const evBtn = document.getElementsByClassName(".evBtn");
+      const pContol = document.getElementById("pContol");
+      const signedUpEmail = document.getElementById("signedInEmail");
+      const signedUpPassword = document.getElementById("signedInPassword");
+      const evBtn = document.getElementsByClassName("evBtn");
       let iEvent = 1;
       let pEvent = 1;
 
