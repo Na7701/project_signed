@@ -47,6 +47,17 @@
   font-weight: bolder;
  }
 
+ @media (max-width: 600px) {
+    form > section {
+        width: 90%; /* 모바일에서 폼이 화면에 꽉 차도록 조정 */
+    }
+
+    #signedUpBtn {
+        top: -60px; /* 모바일에서 위치 조정 */
+        left: -20px;
+        width: 40%; /* 모바일에서 버튼이 화면에 꽉 차도록 조정 */
+    }}
+
 
 
 </style>
@@ -157,37 +168,37 @@
 
               /////sinIN 기능 구현 부분
       });
-      sinIn.addEventListener("click", (event) => {
-        event.preventDefault();
+      // sinIn.addEventListener("click", (event) => {
+      //   event.preventDefault();
 
-        const signedInEmail = document.getElementById("signedInEmail").value;
-        const signedInPassword = document.getElementById("signedInPassword").value;
+      //   const signedInEmail = document.getElementById("signedInEmail").value;
+      //   const signedInPassword = document.getElementById("signedInPassword").value;
 
-        signInWithEmailAndPassword(auth, signedInEmail, signedInPassword)
-              .then((userCredential) => {
+      //   signInWithEmailAndPassword(auth, signedInEmail, signedInPassword)
+      //         .then((userCredential) => {
 
-              // Signed in ...
-                  const user = userCredential.user;
-                  console.log(userCredential);
-                  alert("저장된 회원정보와 일치합니다!")
-              // ...
+      //         // Signed in ...
+      //             const user = userCredential.user;
+      //             console.log(userCredential);
+      //             alert("저장된 회원정보와 일치합니다!")
+      //         // ...
 
-              }) //로그인 정보가 잘못됬을경우
-              .catch((error) => {
-                  console.log("Error!!!!")
-                  alert("잘못된 아이디입니다 \n다시 확인해주세요.")
-                  const errorCode = error.code;
-                  const errorMessage = error.message;
-            });
+      //         }) //로그인 정보가 잘못됬을경우
+      //         .catch((error) => {
+      //             console.log("Error!!!!")
+      //             alert("잘못된 아이디입니다 \n다시 확인해주세요.")
+      //             const errorCode = error.code;
+      //             const errorMessage = error.message;
+      //       });
 
 
 
-      });
+      // });
       document.addEventListener("DOMContentLoaded", () => {
       const eContol = document.getElementById("eContol");
       const signedUpEmail = document.getElementById("signedUpEmail");
       const signedUpPassword = document.getElementById("signedUpPassword");
-      const evBtn = document.getElementsByClassName(".evBtn");
+      const evBtn = document.getElementsByClassName("evBtn");
       let iEvent = 1;
       let pEvent = 1;
 
